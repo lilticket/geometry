@@ -49,136 +49,136 @@ export async function Handle_Render_Offline() {
 }
 
 
-export async function MainHandler() {
+// export async function MainHandler() {
 
-    document.getElementById('loading_container').style.display = 'none';
-    let running = true;
-    let i = 0;
+//     document.getElementById('loading_container').style.display = 'none';
+//     let running = true;
+//     let i = 0;
 
-    let places = [];
-
-
-    while (running) {
-        let newPlaces = await GetInfo(i);
-        if (newPlaces == null) {
-            running = false;
-            return;
-        }
-        // console.log(i);
-
-        newPlaces.forEach(thisPlace => {
-            if (thisPlace.bin.toString()[0] === "1") {
-                places.push(thisPlace);
-                let thisCoords = normalizeTheseCoordinates(thisPlace.the_geom.coordinates[1], thisPlace.the_geom.coordinates[0]);
-                thisPlace.latitude = thisCoords[1]
-                thisPlace.longitude = thisCoords[0]
-                CreateElement(thisPlace);
-                if (refresh) {
-                    refresh = false;
-                    places.forEach(p => {
-                        //console.log('eaching')
-                        let pCoords = normalizeTheseCoordinates(p.the_geom.coordinates[1], p.the_geom.coordinates[0]);
-                        p.latitude = pCoords[1];
-                        p.longitude = pCoords[0];
-                        AlterElement(p.globalid, p);
-                    });
-                }
-            }
-        });
-        console.log(i);
-        i += 50;
-    }
-    console.log('done')
-}
-
-function CreateElement(place) {
-    var container = document.getElementById('container');
-    var element = document.createElement('li');
-    element.className = 'place'
-    element.id = place.globalid;
-    element.style.bottom = place.latitude + "%";
-    element.style.right = (place.longitude) + "%";
-    element.style.width = "1px";
-    element.style.height = "1px";
-    element.style.backgroundColor = "yellow"
-    // let height = (place.heightroof + place.groundelev);
-    // var normalizedHeight = ((height - minHeight) / (maxHeight - minHeight));
-
-    // let color = "";
-    // switch (place.feat_code) {
-    //     case ("1000"): { //Parking
-    //         color = "0";
-    //         break;
-    //     }
-    //     case ("1001"): { //Gas Station Canopy
-    //         color = "61";
-    //         break;
-    //     }
-    //     case ("1002"): { // Storage Tank
-    //         color = "97";
-    //         break;
-    //     }
-    //     case ("1003"): { //Placeholder (triangle for permitted bldg)
-    //         color = "178";
-    //         break;
-    //     }
-    //     case ("1004"): { //Auxiliary Structure (eg non-addressable, not garage)
-    //         color = "274";
-    //         break;
-    //     }
-    //     case ("1005"): { //Temp Structure (eg construction trailer)
-    //         color = "270";
-    //         break;
-    //     }
-    //     case ("1006"): { //Cantilevered Building
-    //         color = "30";
-    //         break;
-    //     }
-    //     case ("2100"): { //Building
-    //         color = "39" //60
-    //         break;
-    //     }
-    //     case ("2110"): { //SkyBridge
-    //         color = "187"
-    //         break;
-    //     }
-    //     case ("5100"): { //Building Under Construction
-    //         color = "328";
-    //         break;
-    //     }
-    //     case ("5110"): { //Garage
-    //         color = "228";
-    //         if (height > 50) {
-    //             color = "0"
-    //         }
-    //         break;
-    //     }
-    // }
+//     let places = [];
 
 
+//     while (running) {
+//         let newPlaces = await GetInfo(i);
+//         if (newPlaces == null) {
+//             running = false;
+//             return;
+//         }
+//         // console.log(i);
 
-    // element.style.backgroundColor = `hsl(${color}, 100%, 50%)`
-    // if (height > maxHeight) {
-    //     maxHeight = height;
-    //     refresh = true;
-    // }
-    // if (height < minHeight) {
-    //     minHeight = height;
-    //     refresh = true;
-    // }
-    // element.style.height = (normalizedHeight * 5) + "px";
-    // element.style.width = "1px";
+//         newPlaces.forEach(thisPlace => {
+//             if (thisPlace.bin.toString()[0] === "1") {
+//                 places.push(thisPlace);
+//                 let thisCoords = normalizeTheseCoordinates(thisPlace.the_geom.coordinates[1], thisPlace.the_geom.coordinates[0]);
+//                 thisPlace.latitude = thisCoords[1]
+//                 thisPlace.longitude = thisCoords[0]
+//                 CreateElement(thisPlace);
+//                 if (refresh) {
+//                     refresh = false;
+//                     places.forEach(p => {
+//                         //console.log('eaching')
+//                         let pCoords = normalizeTheseCoordinates(p.the_geom.coordinates[1], p.the_geom.coordinates[0]);
+//                         p.latitude = pCoords[1];
+//                         p.longitude = pCoords[0];
+//                         AlterElement(p.globalid, p);
+//                     });
+//                 }
+//             }
+//         });
+//         console.log(i);
+//         i += 50;
+//     }
+//     console.log('done')
+// }
+
+// function CreateElement(place) {
+//     var container = document.getElementById('container');
+//     var element = document.createElement('li');
+//     element.className = 'place'
+//     element.id = place.globalid;
+//     element.style.bottom = place.latitude + "%";
+//     element.style.right = (place.longitude) + "%";
+//     element.style.width = "1px";
+//     element.style.height = "1px";
+//     element.style.backgroundColor = "yellow"
+//     // let height = (place.heightroof + place.groundelev);
+//     // var normalizedHeight = ((height - minHeight) / (maxHeight - minHeight));
+
+//     // let color = "";
+//     // switch (place.feat_code) {
+//     //     case ("1000"): { //Parking
+//     //         color = "0";
+//     //         break;
+//     //     }
+//     //     case ("1001"): { //Gas Station Canopy
+//     //         color = "61";
+//     //         break;
+//     //     }
+//     //     case ("1002"): { // Storage Tank
+//     //         color = "97";
+//     //         break;
+//     //     }
+//     //     case ("1003"): { //Placeholder (triangle for permitted bldg)
+//     //         color = "178";
+//     //         break;
+//     //     }
+//     //     case ("1004"): { //Auxiliary Structure (eg non-addressable, not garage)
+//     //         color = "274";
+//     //         break;
+//     //     }
+//     //     case ("1005"): { //Temp Structure (eg construction trailer)
+//     //         color = "270";
+//     //         break;
+//     //     }
+//     //     case ("1006"): { //Cantilevered Building
+//     //         color = "30";
+//     //         break;
+//     //     }
+//     //     case ("2100"): { //Building
+//     //         color = "39" //60
+//     //         break;
+//     //     }
+//     //     case ("2110"): { //SkyBridge
+//     //         color = "187"
+//     //         break;
+//     //     }
+//     //     case ("5100"): { //Building Under Construction
+//     //         color = "328";
+//     //         break;
+//     //     }
+//     //     case ("5110"): { //Garage
+//     //         color = "228";
+//     //         if (height > 50) {
+//     //             color = "0"
+//     //         }
+//     //         break;
+//     //     }
+//     // }
 
 
-    container.appendChild(element);
-}
+
+//     // element.style.backgroundColor = `hsl(${color}, 100%, 50%)`
+//     // if (height > maxHeight) {
+//     //     maxHeight = height;
+//     //     refresh = true;
+//     // }
+//     // if (height < minHeight) {
+//     //     minHeight = height;
+//     //     refresh = true;
+//     // }
+//     // element.style.height = (normalizedHeight * 5) + "px";
+//     // element.style.width = "1px";
 
 
-function AlterElement(id, place) {
-    var element = document.getElementById(id);
-    element.remove();
-    CreateElement(place)
-}
+//     container.appendChild(element);
+// }
+
+
+// function AlterElement(id, place) {
+//     var element = document.getElementById(id);
+//     element.remove();
+//     CreateElement(place)
+// }
 
 
 // export async function HandleData() {
