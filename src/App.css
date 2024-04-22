@@ -1,0 +1,104 @@
+.App {
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  height: 100vh;
+  width: 100vh;
+  position: relative;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.main {
+  position: absolute;
+  height: 250px;
+  width: 250px;
+  background-color: red;
+}
+
+.place {
+  position: absolute;
+  width: 1px;
+  height: .1px;
+  /* background-color: yellow; */
+  /* border-width: .001px;
+  border-color: rgba(255, 255, 255, .5);
+  border-style: solid; */
+  /* -webkit-box-shadow: 0px 0px .1px .5px grey; */
+  /* height: 1px;
+  width: 1px; */
+  /* background-color: white; */
+  /* border-radius: 25px; */
+  /* transform: rotateY(45deg); */
+}
+
+.loading {
+  position: absolute;
+}
+
+.loadingTxt {
+  font-size: 10em;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.circle_point {
+  position: absolute;
+  height: .1px;
+  width: .1px;
+  border-radius: 100%;
+  background-color: white;
+}
+
+.form_view {
+  display: flexbox;
+  background-color: darkslategrey;
+  width: calc(100vw - 100vh);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  background-color: darkslategrey;
+  color: silver;
+  width: 95%;
+  margin-top: 25px;
+  padding: 15;
+  border-width: 0px;
+  font-size: 2em;
+  font-family: ExtraBold;
+}
+
+.btn {
+  background-color: darkslategrey;
+  color: silver;
+  width: 100%;
+  font-family: ExtraBold;
+  font-size: 2em;
+  border-width: 0px;
+}
+
+.inner-radius {
+  background-color: orange;
+}
+
+.view-point {}
+
+
+
+.test_point {
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  border-radius: 100%;
+  background-color: white;
+}

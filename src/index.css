@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* overflow: hidden; */
+  overflow: hidden;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+@font-face {
+  font-family: "Bold_Italic";
+  /*Can be any text*/
+  src: local("Bold_Italic"),
+    url("./fonts/Bold_Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "MyBold";
+  /*Can be any text*/
+  src: local("Bold"),
+    url("./fonts/Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "DemiBold_Italic";
+  /*Can be any text*/
+  src: local("DemiBold_Italic"),
+    url("./fonts/DemiBold_Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "MyDemiBold";
+  /*Can be any text*/
+  src: local("DemiBold"),
+    url("./fonts/DemiBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "ExtraBold_Italic";
+  /*Can be any text*/
+  src: local("ExtraBold_Italic"),
+    url("./fonts/ExtraBold_Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "ExtraBold";
+  /*Can be any text*/
+  src: local("ExtraBold"),
+    url("./fonts/ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "ExtraLight_Italic";
+  /*Can be any text*/
+  src: local("ExtraLight_Italic"),
+    url("./fonts/ExtraLight_Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "ExtraLight";
+  /*Can be any text*/
+  src: local("ExtraLight"),
+    url("./fonts/ExtraLight.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "MyItalic";
+  /*Can be any text*/
+  src: local("Italic"),
+    url("./fonts/Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Light_Italic";
+  /*Can be any text*/
+  src: local("Light_Italic"),
+    url("./fonts/Light_Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "MyLight";
+  /*Can be any text*/
+  src: local("Light"),
+    url("./fonts/Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Medium_Italic";
+  /*Can be any text*/
+  src: local("Medium_Italic"),
+    url("./fonts/Medium_Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Medium";
+  /*Can be any text*/
+  src: local("Medium"),
+    url("./fonts/Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "MyReg";
+  font-style: normal;
+  font-weight: normal;
+
+  /*Can be any text*/
+  src: local("Regular"),
+    url("./fonts/Regular.otf") format("opentype");
+}
